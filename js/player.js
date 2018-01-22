@@ -36,20 +36,20 @@ Character.prototype.moveIt = function(e){
  
     if(e.keyCode == 87)
     {
-        ctx.clearRect(0,0,1400,800);
+        
         player.posY += 10;
         // ctx.fillRect(x,y,30,30);
     }
 
     if(e.keyCode == 65)
     {
-        ctx.clearRect(0,0,1400,800);
+        
         player.posX -= 10;
         // ctx.fillRect(x,y,30,30);
     }
     if(e.keyCode == 68)
     {
-        ctx.clearRect(0,0,1400,800);
+        
         player.posX += 10;
         // ctx.fillRect(x,y,30,30);
     }

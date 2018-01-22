@@ -15,6 +15,6 @@ Board.prototype.drawB = function(){
 }
 
 Board.prototype.clearB = function(){
-    clearRect(0,0,1400,800);
+    // clearRect(0,0,1400,800);
 }
 
