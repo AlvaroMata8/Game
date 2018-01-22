@@ -4,44 +4,54 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
 window.onload = function () {
+  //////////////////////////////////////////////////// Instancias de Board y Character  
     var lvl = new Board();
-    var player = new Character();
-     
-
-    document.addEventListener("keydown",function(event){
-        moveIt(event);
-        
-    })
-
+    var player = [new Character(100,25,700)];
     
-    lvl.drawB();
+    var now = Date.now();
+    var delta = 0;
     
-    player.draw();
+    var render = function(){
+        then = now;
+        now = Date.now();
+        delta = now - then;
+        ///////////////////////////////////////////////////Borrado de canvas 
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+        player.forEach(function(c){
+            c.render(delta);
+        });
+        window.requestAnimationFrame(render);
+    };
+    window.requestAnimationFrame(render);
     
-    function draw(){
-        player.draw(lvl.ctx);
-    }
-    setInterval(draw,1)
+     ///////////////////////////////////////////////// movimiento del PLAYER
+    $(document).keydown(function(e){
+      switch(e.keyCode){
+          case 37: // izquierda
+            player.forEach(function(c){
+              c.move(-1)
+            })
+          break;
+          case 39: // derecha
+            player.forEach(function(c){
+              c.move(1)
+            })
+          break;
+      }
+    });
+    
+    $("body").keyup(function(e){
+      player.forEach(function(c){
+        c.stop();
+      });
+    });
+    // function update(){
+    //     player.draw();
+    //     lvl.drawB();
+    //     window.requestAnimationFrame(update);
+    // }
+    // window.requestAnimationFrame(update);
 
-    function moveIt(e){
-        if(e.keyCode == 87)
-        {
-            player.posY += 10;
-            // ctx.fillRect(x,y,30,30);
-        }
-
-        if(e.keyCode == 65)
-        {
-            player.posX -= 10;
-            // ctx.fillRect(x,y,30,30);
-        }
-        if(e.keyCode == 68)
-        {
-            player.posX += 10;
-            // ctx.fillRect(x,y,30,30);
-    }
-
-    }
 }
 
 
