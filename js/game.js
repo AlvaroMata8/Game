@@ -2,8 +2,6 @@
 
 
 function Board(){
-    this.canvas = document.getElementById('canvas');
-    this.ctx = canvas.getContext('2d');
 
     var img = new Image();
     img.onload = function() {

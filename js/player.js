@@ -1,10 +1,10 @@
 //Objeto constructor de Personsaje.
 
 
-function Character(ctx) {
+function Character() {
         
-        this.posX = 20;
-        this.posY = 100;
+        this.posX = 50;
+        this.posY = 50;
         this.vx = 0;
         this.vy = 0;
         this.maxSpeed = 10;
@@ -17,10 +17,17 @@ function Character(ctx) {
         
      
   }
-   Character.prototype.draw = function(ctx){
-    ctx.fillRect(25,700,50,50);
+
+Character.prototype.draw = function(){
+    ctx.fillRect(25,700,this.posX, this.posY);
     ctx.fillStyle= "#ff0000"
+    
    }
 
+Character.prototype.moveChar = function(){
+  ctx.clearRect(0,0,1400,800)
+  this.posX += this.vx;
+  this.posY += this.vy;
 
+}
 

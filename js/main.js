@@ -1,17 +1,16 @@
 //Aqui se ejecuta el juego ,eventos de teclado etc.
+var canvas = document.getElementById('canvas');
+var ctx = canvas.getContext('2d');
+
 window.onload = function () {
     var lvl = new Board();
     var player = new Character();
      
-    var canvas = document.getElementById('canvas');
-    var ctx = canvas.getContext('2d');
 
     document.addEventListener("keydown",function(event){
         moveIt(event);
         
     })
-
-
 
     
     Board();
@@ -21,37 +20,32 @@ window.onload = function () {
     function draw(){
         player.draw(lvl.ctx);
     }
-    
     setInterval(draw,1)
 
 
     function update() {
+        
         player.x += player.vx;
         player.y += player.vy;
     }
 
     function moveIt(e){
-        if(e.keyCode == 38)
+        if(e.keyCode == 87)
         {
-            ctx.clearRect(0,0,canvas.width,canvas.height);
-            player.posY -=  10;
-            // ctx.fillRect(x,y,30,30);
-        }
-        if(e.keyCode == 40)
-        {
-            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.clearRect(0,0,1400,800);
             player.posY += 10;
             // ctx.fillRect(x,y,30,30);
         }
-        if(e.keyCode == 37)
+
+        if(e.keyCode == 65)
         {
-            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.clearRect(0,0,1400,800);
             player.posX -= 10;
             // ctx.fillRect(x,y,30,30);
         }
-        if(e.keyCode == 39)
+        if(e.keyCode == 68)
         {
-            ctx.clearRect(0,0,canvas.width,canvas.height);
+            ctx.clearRect(0,0,1400,800);
             player.posX += 10;
             // ctx.fillRect(x,y,30,30);
     }
