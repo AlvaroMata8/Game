@@ -1,22 +1,20 @@
 // Dibujar el fondo
 
-// function Board(){
-//     var canvas = document.getElementById("canvas");
-//     var ctx = canvas.getContext("2d");
+function Board(heigth,width){
 
-//   var img = new Image();
-//   img.src = '../img/background.jpg';
-//   imgScale = 1400/ 800;
-//   img.onload = function() {
-//   ctx.drawImage(img, 0, 0,);
-//   };
-// }
 
-function Board(){
+}
 
+
+Board.prototype.drawB = function(){
     var img = new Image();
     img.onload = function() {
     ctx.drawImage(img, 0, 0,1400,800);
     };
-    img.src = './images/background.jpg';
+    img.src = './images/background.jpg'
 }
+
+Board.prototype.clearB = function(){
+    clearRect(0,0,1400,800);
+}
+

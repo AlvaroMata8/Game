@@ -1,4 +1,5 @@
 //Aqui se ejecuta el juego ,eventos de teclado etc.
+
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
@@ -13,21 +14,14 @@ window.onload = function () {
     })
 
     
-    Board();
-    update();
-    draw(lvl);
+    lvl.drawB();
+    
+    player.draw();
     
     function draw(){
         player.draw(lvl.ctx);
     }
     setInterval(draw,1)
-
-
-    function update() {
-        
-        player.x += player.vx;
-        player.y += player.vy;
-    }
 
     function moveIt(e){
         if(e.keyCode == 87)
@@ -52,5 +46,6 @@ window.onload = function () {
 
     }
 }
+
 
 
