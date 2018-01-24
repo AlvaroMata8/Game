@@ -4,54 +4,61 @@ var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
 
 
-window.onload = function () { 
+window.onload = function () {
   var player = new Character();
-  var lava = new Wash();
-  var update = function(){
+  var obst = new Obstacles(100,700,50,20);
+  var obstt = new Obstacles(150,750,50,20);
+  var obsttt = new Obstacles(200,800,50,20);
+  var update = function () {
 
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
     player.render();
     player.updateChar();
     player.moveOrder();
+    obst.drawObs();
+    obstt.drawObs();
+    obsttt.drawObs();
+    
+    
     window.requestAnimationFrame(update);
     
   };
   requestAnimationFrame(update);
-  lava.MapConstructor();
   
+
   ////////////////// movimiento del PLAYER
-  document.onkeydown = (function(e){
-    switch(e.keyCode){
+  document.onkeydown = (function (e) {
+    switch (e.keyCode) {
 
       case 37: // izquierda
-      player.orders[0] = true;
-      break;
+        player.orders[0] = true;
+        break;
 
       case 39: // derecha
-      player.orders[1] = true; 
-      break;
+        player.orders[1] = true;
+        break;
 
       case 38: //arriba
-      player.orders[2] = true;
-    
-      break;
+        player.orders[2] = true;
+
+        break;
     }
   })
-    document.onkeyup = (function(e){
-      switch(e.keyCode){
-  
-        case 37: // izquierda
+  document.onkeyup = (function (e) {
+    switch (e.keyCode) {
+
+      case 37: // izquierda
         player.orders[0] = false;
         break;
-  
-        case 39: // derecha
-        player.orders[1] = false; 
+
+      case 39: // derecha
+        player.orders[1] = false;
         break;
-  
-        case 38: //arriba
+
+      case 38: //arriba
         player.orders[2] = false;
-      
+
         break;
-      }
+    }
   });
 }
