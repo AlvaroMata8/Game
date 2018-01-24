@@ -3,7 +3,7 @@
 function Character() {
     this.x = 25,
     this.y = 840,
-    this.speed = 3,
+    this.speed = 5,
     this.vy = 0,
     this.vx = 0,
     this.width = 10,
