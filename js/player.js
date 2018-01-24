@@ -1,7 +1,7 @@
 //Objeto constructor de Personsaje.
 
 function Character() {
-    this.x = 25,
+  this.x = 25,
     this.y = 840,
     this.speed = 5,
     this.vy = 0,
@@ -12,7 +12,7 @@ function Character() {
     this.orders = [false, false, false],
     this.friction = 0.8,
     this.gravity = 0.2;
-    this.jumping = false;
+  this.jumping = false;
 }
 
 
@@ -60,9 +60,9 @@ Character.prototype.moveUp = function () {
 Character.prototype.moveOrder = function () {
   if (this.orders[0] == true) {
     this.moveLeft();
-  }if (this.orders[1] == true) {
+  } if (this.orders[1] == true) {
     this.moveRight();
-  }if (this.orders[2] == true) {
+  } if (this.orders[2] == true) {
     this.moveUp();
   }
 }

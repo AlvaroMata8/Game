@@ -6,7 +6,7 @@ var ctx = canvas.getContext('2d');
 
 window.onload = function () { 
   var player = new Character();
-
+  var lava = new Wash();
   var update = function(){
 
     ctx.clearRect(0,0,canvas.width,canvas.height);
@@ -17,6 +17,7 @@ window.onload = function () {
     
   };
   requestAnimationFrame(update);
+  lava.MapConstructor();
   
   ////////////////// movimiento del PLAYER
   document.onkeydown = (function(e){
