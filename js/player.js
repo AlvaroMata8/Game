@@ -1,18 +1,18 @@
 //Objeto constructor de Personsaje.
 
 function Character() {
-  this.x = 25,
+    this.x = 25,
     this.y = 840,
-    this.speed = 5,
+    this.speed = 3,
     this.vy = 0,
     this.vx = 0,
     this.width = 10,
     this.height = 10,
-    this.color = "#FF0000",
+    this.color = "#9b00ef",
     this.orders = [false, false, false],
     this.friction = 0.8,
     this.gravity = 0.2;
-  this.jumping = false;
+    this.jumping = false;
 }
 
 
