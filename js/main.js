@@ -12,6 +12,7 @@ window.onload = function () {
     ctx.clearRect(0,0,canvas.width,canvas.height);
     player.render();
     player.updateChar();
+    player.moveOrder();
     window.requestAnimationFrame(update);
     
   };
@@ -22,39 +23,34 @@ window.onload = function () {
     switch(e.keyCode){
 
       case 37: // izquierda
-      player.move(-1)
+      player.orders[0] = true;
       break;
 
       case 39: // derecha
-      player.move(1) 
+      player.orders[1] = true; 
       break;
 
       case 38: //arriba
-      player.moveUp();
-      console.log(38)
+      player.orders[2] = true;
+    
       break;
     }
-  });
-
-  // document.onkeyup = (function(e){ ////para hacer bajar el character
-  //   if(e.keyCode = 38){
-  //   if(player.y > 20){
-  //     player.moveDown();
-  //   }
-  // }
-  // })
+  })
+    document.onkeyup = (function(e){
+      switch(e.keyCode){
   
-  $("body").keyup(function(e){
-    player.stop(); 
-  }); 
+        case 37: // izquierda
+        player.orders[0] = false;
+        break;
+  
+        case 39: // derecha
+        player.orders[1] = false; 
+        break;
+  
+        case 38: //arriba
+        player.orders[2] = false;
+      
+        break;
+      }
+  });
 }
-
-
-
-
-// function update(){
-//     player.draw();
-//     lvl.drawB();
-//     window.requestAnimationFrame(update);
-// }
-// window.requestAnimationFrame(update);
