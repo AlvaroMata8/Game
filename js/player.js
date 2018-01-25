@@ -1,8 +1,8 @@
 //Objeto constructor de Personsaje.
 
 function Character() {
-    this.x = 25,
-    this.y = 840,
+    this.x = 20,
+    this.y = 40,
     this.speed = 3,
     this.vy = 0,
     this.vx = 0,
@@ -13,6 +13,7 @@ function Character() {
     this.friction = 0.8,
     this.gravity = 0.2;
     this.jumping = false;
+    this.hit = false;
 }
 
 
@@ -66,3 +67,9 @@ Character.prototype.moveOrder = function () {
     this.moveUp();
   }
 }
+
+
+// si la posicion player X e Y es igual a la posicion
+// de algun objeto del Array obstaculos
+//Decirle al player donde estan los obstaculos para que colisiones y no 
+//renderizar todo el mapa todo el rato
