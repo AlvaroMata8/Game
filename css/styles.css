@@ -1,6 +1,6 @@
 #canvas{
     border: 1px solid red;
-    background-image: url("../images/fondo.gif");
+    /* background-image: url("../images/fondo.gif"); */
     background-size: 1800px 1000px;
 
 }
