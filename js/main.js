@@ -1,23 +1,22 @@
 //Aqui se ejecuta el juego ,eventos de teclado etc.
 
+
 var canvas = document.getElementById('canvas');
 var ctx = canvas.getContext('2d');
-
-
-window.onload = function () {
   var player = new Character();
-
-
+  
+  
   var update = function () {
-
+    
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     player.render();
     player.updateChar();
     player.moveOrder();
-    window.requestAnimationFrame(update);
+    drawObstacles()
+    requestAnimationFrame(update);
+
     
   };
-  drawObstacles();
   
   requestAnimationFrame(update);
 
@@ -57,4 +56,4 @@ window.onload = function () {
         break;
     }
   });
-}
+

@@ -21,160 +21,170 @@
 
 //Plataformas
 var object = [];
+
 object.push({
     x: 10,
     y: 700,
-    width : 70,
-    heigth : 20,
+    width: 70,
+    height: 20,
 });
 
 object.push({
     x: 220,
     y: 620,
-    width : 15,
-    heigth : 20,
+    width: 15,
+    height: 20,
 });
 
 object.push({
     x: 235,
     y: 610,
-    width : 40,
-    heigth : 20,
+    width: 40,
+    height: 20,
 });
 
 object.push({
     x: 275,
     y: 620,
-    width : 15,
-    heigth : 20,
+    width: 15,
+    height: 20,
 });
+
+object.push({
+    x: 220,
+    y: 450,
+    width: 100,
+    height: 20,
+});
+
 
 object.push({
     x: 30,
     y: 520,
-    width : 100,
-    heigth : 20,
+    width: 100,
+    height: 20,
 });
 
 object.push({
     x: 30,
     y: 500,
-    width : 7.,
-    heigth : 20,
+    width: 70,
+    height: 20,
 });
 
 object.push({
     x: 30,
     y: 480,
-    width : 40,
-    heigth : 20,
+    width: 40,
+    height: 20,
 });
 
 object.push({
     x: 420,
     y: 450,
-    width : 100,
-    heigth : 20,
+    width: 100,
+    height: 20,
 });
 
 object.push({
     x: 320,
     y: 455,
-    width : 100,
-    heigth : 20,
+    width: 100,
+    height: 20,
 });
 
 object.push({
     x: 565,
     y: 400,
-    width : 20,
-    heigth : 40,
+    width: 20,
+    height: 40,
 });
 
 object.push({
     x: 620,
     y: 450,
-    width : 20,
-    heigth : 20,
+    width: 20,
+    height: 20,
 });
 
 object.push({
     x: 630,
     y: 450,
-    width : 20,
-    heigth : 120,
+    width: 20,
+    height: 120,
 });
 
 object.push({
     x: 640,
     y: 550,
-    width : 150,
-    heigth : 20,
+    width: 150,
+    height: 20,
 });
 
 object.push({
     x: 780,
     y: 450,
-    width : 20,
-    heigth :120,
+    width: 20,
+    height: 120,
 });
 
 object.push({
     x: 790,
     y: 450,
-    width : 20,
-    heigth :20,
+    width: 20,
+    height: 20,
 });
 
 object.push({
     x: 655,
     y: 350,
-    width : 120,
-    heigth :20,
+    width: 120,
+    height: 20,
 });
 
 object.push({
     x: 955,
     y: 650,
-    width : 120,
-    heigth : 20,
+    width: 120,
+    height: 20,
 });
 
 object.push({
     x: 1200,
     y: 550,
-    width : 10,
-    heigth :20,
+    width: 10,
+    height: 20,
 });
 
 object.push({
     x: 1300,
     y: 450,
-    width : 10,
-    heigth :20,
+    width: 10,
+    height: 20,
 });
 
 object.push({
     x: 1400,
     y: 350,
-    width : 10,
-    heigth :20,
+    width: 10,
+    height: 20,
 });
 
 object.push({
     x: 1545,
     y: 280,
-    width : 120,
-    heigth :20,
+    width: 120,
+    height: 20,
 });
-
 function drawObstacles() {
     for (var i = 0; i < object.length; i++) {
-        ctx.fillStyle = "#FF0000";
-        ctx.fillRect(object[i].x , object[i].y, object[i].width, object[i].height);
-        console.log("porque no pintas?")
+        ctx.fillStyle = "red";
+        ctx.fillRect(object[i].x, object[i].y, object[i].width, object[i].height);
     }
-  };
+};
+
+
+console.log(object)
 
 
 
@@ -193,12 +203,6 @@ function drawObstacles() {
 
 
 
-
-
-
-
-
-  
 // var obs1 = new Obstacles(10, 700, 70, 20);
 // var obs2 = new Obstacles(220, 620, 15, 20);
 // var trampilla = new Obstacles(235, 610, 40, 20);
