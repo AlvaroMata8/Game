@@ -2,8 +2,8 @@
 
 function Character() {
     this.x = 20,
-    this.y = 300,
-    this.speed = 3,
+    this.y = 40,
+    this.speed = 4,
     this.vy = 0,
     this.vx = 0,
     this.width = 10,
@@ -13,9 +13,9 @@ function Character() {
     this.friction = 0.8,
     this.gravity = 0.2;
     this.jumping = false;
-    this.hit = false;
-}
-
+    this.platformY = 840;
+  }
+//el player salta 156
 
 Character.prototype.render = function () {
   ctx.fillStyle = this.color;
@@ -33,8 +33,8 @@ Character.prototype.updateChar = function (direction) {
     this.x = this.width;
   }
 
-  if (this.y >= 690) {
-    this.y = 690;
+  if (this.y >= this.platformY) {
+    this.y = this.platformY;
     this.jumping = false;
   }
 }
@@ -68,8 +68,16 @@ Character.prototype.moveOrder = function () {
   }
 }
 
-// Character.prototype.collision = function () {
-  
+Character.prototype.direction = function (){
+
+}
+//  Character.prototype.collision = function () {
+//     objects.forEach(function(object){
+//       if(object.x == this.x && object.y == this.y){
+//         console.log("toco")
+//       }
+//     })
+
 //   var that = this;
 //     object.forEach(function(){
 

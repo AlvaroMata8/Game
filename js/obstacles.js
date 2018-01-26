@@ -1,4 +1,11 @@
-
+function Obstacles(o){
+    this.x = o.x,
+    this.y= o.y,
+    this.width = o.width,
+    this.height = o.height,
+    this.image = new Image();
+    this.isActive = false;
+}
 var objects = [];
 
 objects.push({
@@ -131,21 +138,21 @@ objects.push({
 objects.push({
     x: 1200,
     y: 550,
-    width: 10,
+    width: 20,
     height: 20,
 });
 
 objects.push({
     x: 1300,
     y: 450,
-    width: 10,
+    width: 20,
     height: 20,
 });
 
 objects.push({
     x: 1400,
     y: 350,
-    width: 10,
+    width: 20,
     height: 20,
 });
 
@@ -155,10 +162,7 @@ objects.push({
     width: 120,
     height: 20,
 });
-function drawObstacles() {
-    for (var i = 0; i < objects.length; i++) {
-        ctx.fillStyle = "#0ffcf0";
-        ctx.fillRect(objects[i].x, objects[i].y, objects[i].width, objects[i].height);
-    }
-};
 
+Obstacles.prototype.draw = function (){
+    ctx.drawImage(this.image,this.x,this.y,this.width,this.height);
+}
