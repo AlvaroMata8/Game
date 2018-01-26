@@ -2,13 +2,13 @@
 
 function Character() {
     this.x = 20,
-    this.y = 40,
+    this.y = 300,
     this.speed = 3,
     this.vy = 0,
     this.vx = 0,
     this.width = 10,
     this.height = 10,
-    this.color = "#9b00ef",
+    this.color = "#f200ea",
     this.orders = [false, false, false],
     this.friction = 0.8,
     this.gravity = 0.2;
@@ -33,8 +33,8 @@ Character.prototype.updateChar = function (direction) {
     this.x = this.width;
   }
 
-  if (this.y >= 840) {
-    this.y = 840;
+  if (this.y >= 690) {
+    this.y = 690;
     this.jumping = false;
   }
 }
@@ -68,43 +68,43 @@ Character.prototype.moveOrder = function () {
   }
 }
 
-Character.prototype.collision = function () {
+// Character.prototype.collision = function () {
   
-  var that = this;
-    object.forEach(function(){
+//   var that = this;
+//     object.forEach(function(){
 
-  var vectorX = (that.x + (that.width / 2)) -  (object.x +  (object.width / 2));
-  var vectorY = (that.y + (that.height / 2)) -  (object.y +  (object.height / 2));
+//   var vectorX = (that.x + (that.width / 2)) -  (object.x +  (object.width / 2));
+//   var vectorY = (that.y + (that.height / 2)) -  (object.y +  (object.height / 2));
 
-  var halfWidths = (that.width / 2) +  (object.width / 2);
-  var halfHeights = (that.height / 2) +  (object.height / 2);
+//   var halfWidths = (that.width / 2) +  (object.width / 2);
+//   var halfHeights = (that.height / 2) +  (object.height / 2);
 
-  var collisionDirection = null;
+//   var collisionDirection = null;
 
-  if (Math.abs(vectorX) < halfWidths && Math.abs(vectorY) < halfHeights) {
-    var offsetX = halfWidths - Math.abs(vectorX);
-    var offsetY = halfHeights - Math.abs(vectorY);
-    if (offsetX < offsetY) {
-      if (vectorX > 0) {
-        collisionDirection = "left";
-        that.x += offsetX;
-      } else {
-        ollisionDirection = "right";
-        that.x -= offsetX;
-      }
-    } else {
-      if (vectorY > 0) {
-        collisionDirection = "top";
-        that.y += offsetY;
-      } else {
-        collisionDirection = "bottom";
-        that.y -= offsetY;
-      }
-    }
-  };
-  return collisionDirection;
-})
-};
+//   if (Math.abs(vectorX) < halfWidths && Math.abs(vectorY) < halfHeights) {
+//     var offsetX = halfWidths - Math.abs(vectorX);
+//     var offsetY = halfHeights - Math.abs(vectorY);
+//     if (offsetX < offsetY) {
+//       if (vectorX > 0) {
+//         collisionDirection = "left";
+//         that.x += offsetX;
+//       } else {
+//         ollisionDirection = "right";
+//         that.x -= offsetX;
+//       }
+//     } else {
+//       if (vectorY > 0) {
+//         collisionDirection = "top";
+//         that.y += offsetY;
+//       } else {
+//         collisionDirection = "bottom";
+//         that.y -= offsetY;
+//       }
+//     }
+//   };
+//   return collisionDirection;
+// })
+// };
 
 // si la posicion player X e Y es igual a la posicion
 // de algun objeto del Array obstaculos
