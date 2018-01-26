@@ -16,13 +16,13 @@ createObstacles()
 function drawObstacles() {
   obs.forEach(function (e) {
     e.draw()
-    e.image.src = "./images/textura.jpg";
+    e.image.src = "./images/text1.jpg";
   })
 }
 
 
 var update = function () {
-  if(player.platformY== 840){
+  if(player.platformY){
     
   }
   ctx.clearRect(0, 0, canvas.width, canvas.height);

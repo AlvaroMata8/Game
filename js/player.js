@@ -8,7 +8,7 @@ function Character() {
     this.vx = 0,
     this.width = 10,
     this.height = 10,
-    this.color = "#f200ea",
+    this.color = "#02f706",
     this.orders = [false, false, false],
     this.friction = 0.8,
     this.gravity = 0.2;
